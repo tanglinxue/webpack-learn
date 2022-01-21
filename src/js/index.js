@@ -5,6 +5,7 @@
         该index.js是webpack的[入口文件]
         该文件可以用于汇总:js,css,json,图片,音频,视频
 */
+//import '@babel/polyfill';//包含ES6的高级语法
 import {sum} from './module1'
 import {sub} from './module2'
 import module3 from './module3'

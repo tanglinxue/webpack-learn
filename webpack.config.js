@@ -5,8 +5,8 @@ const {resolve} = require('path')
 module.exports = {
   entry:'./src/js/index.js',//入口
   output:{
-    path:resolve(__dirname,'dist/js'),//输出的路径
-    filename:'index.js'//输出的文件的名字
+    path:resolve(__dirname,'dist'),//输出的路径
+    filename:'./js/index.js'//输出的文件的名字
   },
   mode:'development',//配置工作的模式
    //所有的Loader都要配置在module对象中的rules属性中
@@ -35,13 +35,38 @@ module.exports = {
       use:{
         loader:'babel-loader',
         options:{
-           //预设： 只是babel做怎么样的兼容性处理
-          presets:[
-            '@babel/preset-env'
-          ]
+          //预设： 只是babel做怎么样的兼容性处理
+          presets: [
+            [
+                '@babel/preset-env',
+                {
+                    useBuiltIns: 'usage',//按需加载和全部加载不能同时进行
+                    corejs: {//指定core-js版本
+                        version: 3
+                    },
+                    targets: {//指定兼容性做到那个版本的浏览器
+                        chrome: '58', //兼容版本大于60的chrome浏览器
+                        ie: '9'
+                    }
+                }
+            ]
+          ],
+          cacheDirectory:true,//开启babel缓存
         }
       }
-    }
+    },
+     //使用url-loader处理样式文件中的图片
+     {
+       test:/\.(png|jpg|gif)$/,
+       use:[
+         {
+           loader:'file-loader',
+           options:{
+            name:'[hash:5].[ext]',//修改文件的名称[hash:5] hash值的前5位,[ext] 文件的扩展名
+           }
+         }
+       ]
+     }
    ]
   },
 }
