@@ -1,0 +1,52 @@
+{
+  "name": "webpacklearn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanglinxue/webpack-learn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanglinxue/webpack-learn/issues"
+  },
+  "homepage": "https://github.com/tanglinxue/webpack-learn#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.7.0",
+    "eslint-loader": "^4.0.2",
+    "less": "^3.12.2",
+    "less-loader": "^5.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.8.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "$": "readonly",
+      "Promise": "readonly"
+    },
+    "rules": {
+      "no-console": 0,
+      "eqeqeq": 0,
+      "no-alert": 0
+    },
+    "extends": "eslint:recommended"
+  }
+}
