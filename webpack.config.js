@@ -60,8 +60,11 @@ module.exports = {
        test:/\.(png|jpg|gif)$/,
        use:[
          {
-           loader:'file-loader',
+           loader:'url-loader',
            options:{
+            limit:16000,
+            publicPath:'../dist/images/',//决定图片的url路径
+            outputPath:'images',//决定文件本地输出路径
             name:'[hash:5].[ext]',//修改文件的名称[hash:5] hash值的前5位,[ext] 文件的扩展名
            }
          }
