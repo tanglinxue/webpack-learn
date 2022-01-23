@@ -2,6 +2,7 @@
 此文件是是webpack的配置文件,用于指定webpack去执行那些任务
 */
 const {resolve} = require('path')
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry:'./src/js/index.js',//入口
   output:{
@@ -72,4 +73,9 @@ module.exports = {
      }
    ]
   },
+  plugins:[
+    new HTMLWebpackPlugin({
+      template: "./src/index.html",//以当期文件下为模板创建爱你新的HTML(1.结构和以前一样2,会自动引入打包资源)
+    })
+  ]
 }

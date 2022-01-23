@@ -26,6 +26,7 @@
     "eslint": "^7.32.0",
     "eslint-loader": "^4.0.2",
     "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^4.5.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "style-loader": "^1.0.1",
